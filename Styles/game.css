@@ -160,7 +160,7 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 120px;
+  font-size: 100px;
   border-right: 3px solid;
   border-bottom: 3px solid;
   background-color: rgb(58, 58, 60);
@@ -274,5 +274,12 @@ body {
   .score-board {
     margin: 10px 40px;
     border-radius: 10px;
+  }
+  .game-board {
+    width: 306px;
+  }
+  .box {
+    width: 100px;
+    height: 100px;
   }
 }
