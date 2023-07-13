@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="big-container">
-      <div class="playerName-input">
+      <div class="playerName-input" id="playerNames">
         <label for="player-1" class="player-label"
           >Player <span class="bold">X</span> Name</label
         >
@@ -39,7 +39,6 @@
           maxlength="20"
           autocomplete="off"
           class="player-input"
-          required
         />
         <label for="player-2" class="player-label"
           >Player <span class="bold">O</span> Name</label
@@ -50,12 +49,12 @@
           maxlength="20"
           autocomplete="off"
           class="player-input"
-          required
         />
+        <p class="hint">Please fill your names to start the game!</p>
         <button class="start-btn" id="startBTN">Start Game</button>
       </div>
 
-      <div class="container">
+      <div class="container" id="gameContainer">
         <div class="score-board">
           <h1>Score Board</h1>
           <p class="score-label">Score</p>
@@ -67,18 +66,22 @@
           </div>
           <div class="player-info">
             <p class="player-board">
-              Player Y : <span id="playerYName">Sample 2</span>
+              Player O : <span id="playerYName">Sample 2</span>
             </p>
             <p id="scoreY" class="score">1</p>
           </div>
           <div class="score-board-action">
-            <button class="start-btn" id="newGame">New Game</button>
+            <div class="btn-cont">
+              <button class="start-btn" id="newGame">Restart</button>
+              <button class="start-btn" id="changeSides">Switch</button>
+            </div>
+
             <button class="start-btn" id="restartNew">
               Restart With Different Players
             </button>
           </div>
         </div>
-        <div class="game-board-container">
+        <div class="game-board-container" id="gameBoardContainer">
           <div class="game-board" id="game-board">
             <div class="box" id="0"></div>
             <div class="box" id="1"></div>
@@ -90,14 +93,25 @@
             <div class="box" id="7"></div>
             <div class="box" id="8"></div>
           </div>
-          <div class="result">
-            <h1>Player <span id="result" class="score"> X </span> Wins!</h1>
-            <button class="start-btn" id="newRound">New Round</button>
-          </div>
+        </div>
+        <div class="result" id="resultContainer">
+          <h1 id="result">Player X Wins!</h1>
+          <button class="start-btn" id="newRound">New Round</button>
         </div>
       </div>
     </div>
-
+    <audio src="Assets/sound.mp3" style="display: none" id="audio"></audio>
+    <audio src="Assets/draw.mp3" style="display: none" id="drawAudio"></audio>
+    <audio
+      src="Assets/newRound.mp3"
+      style="display: none"
+      id="newRoundSound"
+    ></audio>
+    <audio
+      src="Assets/win_sound.mp3"
+      style="display: none"
+      id="win_sound"
+    ></audio>
     <script src="Scripts/game.js"></script>
   </body>
 </html>
